@@ -58,7 +58,19 @@ public class UserRegistration {
         Pattern pattern = Pattern.compile(regex);
         for (int i = 0; i < list.size(); i++) {
             Matcher matcher = pattern.matcher(list.get(i));
-            System.out.println("The Email id is : ");
+            System.out.println("The Mobile is : ");
+            System.out.println(list.get(i) + " -> " + matcher.matches());
+        }}
+    private void passwordRuleMinimumEightCharacter() {
+        System.out.println("Password Rule To give minimum 8 Characters:");
+        list.add("hgythbjklo");
+        list.add("oilkj");
+        list.add("ghiytred");
+        String regex = "[A-Za-z]{8,}";
+        Pattern pattern = Pattern.compile(regex);
+        for (int i = 0; i < list.size(); i++) {
+            Matcher matcher = pattern.matcher(list.get(i));
+            System.out.println("The Password is : ");
             System.out.println(list.get(i) + " -> " + matcher.matches());
         }}
     public static void main(String[] args) {
@@ -67,7 +79,8 @@ public class UserRegistration {
         //user.isValidFirstName();;
         //user.isValidEmailId();
        // user.isValidSecondName()
-        user.predefinedMobileFormat();
+        //user.predefinedMobileFormat();
+        user.passwordRuleMinimumEightCharacter();
     }
 
     }
