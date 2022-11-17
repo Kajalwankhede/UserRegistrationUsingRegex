@@ -48,12 +48,26 @@ public class UserRegistration {
             System.out.println("The Email id is : ");
             System.out.println(list.get(i) + " -> " + matcher.matches());
         }}
+    private void predefinedMobileFormat() {
+        System.out.println(" Checking for predefined Mobile Format:");
+        list.add("91 7890987605");
+        list.add("91 8798709876");
+        list.add("112 9876543214");
+        String regex = "^(\\d{1,2}( )?)?((\\(\\d{3}\\))|\\d{3})[- .]?\\d{3}[- .]?\\d{4}$";//get prefix with 2 digits and space
+
+        Pattern pattern = Pattern.compile(regex);
+        for (int i = 0; i < list.size(); i++) {
+            Matcher matcher = pattern.matcher(list.get(i));
+            System.out.println("The Email id is : ");
+            System.out.println(list.get(i) + " -> " + matcher.matches());
+        }}
     public static void main(String[] args) {
         System.out.println("User Registration using Regex");
         UserRegistration user = new UserRegistration();
-        //user.isValidFirstName();
-       // user.isValidSecondName();
-        user.isValidEmailId();
+        //user.isValidFirstName();;
+        //user.isValidEmailId();
+       // user.isValidSecondName()
+        user.predefinedMobileFormat();
     }
 
     }
