@@ -47,7 +47,14 @@ public class UserRegistration {
             Matcher matcher = pattern.matcher(list.get(i));
             System.out.println("The Email id is : ");
             System.out.println(list.get(i) + " -> " + matcher.matches());
-        }}
+        }
+        System.out.println("Removing Email id:");
+    for (int i= list.size()-1;i>1;i--){
+        list.remove(i);
+        System.out.println("List after removing Email Id: "+list);
+    }
+
+    }
     private void predefinedMobileFormat() {
         System.out.println(" Checking for predefined Mobile Format:");
         list.add("91 7890987605");
@@ -77,10 +84,10 @@ public class UserRegistration {
         System.out.println("User Registration using Regex");
         UserRegistration user = new UserRegistration();
         //user.isValidFirstName();;
-        //user.isValidEmailId();
+        user.isValidEmailId();
        // user.isValidSecondName()
         //user.predefinedMobileFormat();
-        user.passwordRuleMinimumEightCharacter();
+       // user.passwordRuleMinimumEightCharacter();
     }
 
     }
