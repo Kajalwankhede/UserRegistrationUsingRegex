@@ -65,8 +65,9 @@ public class UserRegistration {
         System.out.println("Password Rule To give minimum 8 Characters:");
         list.add("hgythbjklo");
         list.add("oilkj");
-        list.add("ghiytred");
-        String regex = "[A-Za-z]{8,}";
+        list.add("Hgythbjklo");
+        list.add("Shoiuytld");
+        String regex = "[A-Z]{1}[a-z]{8,}";
         Pattern pattern = Pattern.compile(regex);
         for (int i = 0; i < list.size(); i++) {
             Matcher matcher = pattern.matcher(list.get(i));
