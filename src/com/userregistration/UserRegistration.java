@@ -30,11 +30,30 @@ public class UserRegistration {
             System.out.println("The Last name is : ");
             System.out.println(list.get(i) + " -> " + matcher.matches());
         }}
+
+    private void isValidEmailId() {
+        System.out.println(" Checking Valid EmailId:");
+        list.add("kajal@gmail.com");
+        list.add("user@domain.co.in");
+        list.add("user1@domain.com");
+        list.add("user.name@domain.com");
+        list.add("user#domain.com");//Invalid emails
+        list.add("@yahoo.com");
+
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+
+        Pattern pattern = Pattern.compile(regex);
+        for (int i = 0; i < list.size(); i++) {
+            Matcher matcher = pattern.matcher(list.get(i));
+            System.out.println("The Email id is : ");
+            System.out.println(list.get(i) + " -> " + matcher.matches());
+        }}
     public static void main(String[] args) {
         System.out.println("User Registration using Regex");
         UserRegistration user = new UserRegistration();
         //user.isValidFirstName();
-        user.isValidSecondName();
+       // user.isValidSecondName();
+        user.isValidEmailId();
     }
 
     }
